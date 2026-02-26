@@ -56,10 +56,10 @@ Usually, the Model class name will be the capitalised table name (single instead
 
 ```python
 # EXAMPLE
-# Table name: students
+# Table name: Book
 
 # Model class
-# (in lib/student.py)
+# (in lib/book.py)
 class Student
 
 
@@ -80,11 +80,11 @@ Define the attributes of your Model class. You can usually map the table columns
 # Model class
 # (in lib/student.py)
 
-class Student:
-    def __init__(self):
+class Book:
+    def __init__(self, title, author_name):
         self.id = 0
-        self.name = ""
-        self.cohort_name = ""
+        self.title = title
+        self.author_name = author_name
 
         # Replace the attributes by your own columns.
 
@@ -115,11 +115,13 @@ Using comments, define the method signatures (arguments and return value) and wh
 # Repository class
 # (in lib/student_repository.py)
 
-class StudentRepository():
+class BookRepository():
 
+    def __init__(self, connection):
+        self._connection = connection
     # Selecting all records
     # No arguments
-    def all():
+    def all(self):
         # Executes the SQL query:
         # SELECT id, name, cohort_name FROM students;
 
