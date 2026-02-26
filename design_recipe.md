@@ -81,7 +81,7 @@ Define the attributes of your Model class. You can usually map the table columns
 # (in lib/student.py)
 
 class Book:
-    def __init__(self, title, author_name):
+    def __init__(self, id, title, author_name):
         self.id = 0
         self.title = title
         self.author_name = author_name
