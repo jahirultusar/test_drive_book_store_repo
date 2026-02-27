@@ -13,6 +13,7 @@ from lib.database_connection import DatabaseConnection
 def db_connection():
     conn = DatabaseConnection()
     conn.connect()
+    conn.seed('seeds/book_store.sql')
     return conn
 
 # Now, when a test includes a parameter named `db_connection`, Pytest automatically
